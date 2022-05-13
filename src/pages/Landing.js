@@ -5,8 +5,8 @@ const Landing = () => {
     return (
         <div>
             <div>
-                <Link to="/register" className="item1">Register</Link>
-                <Link to="/login" className="item1">Login</Link>
+                <Link to="/register">Register</Link>
+                <Link to="/login">Login</Link>
             </div>
         </div>
     )

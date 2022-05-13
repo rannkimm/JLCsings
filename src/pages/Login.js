@@ -21,7 +21,7 @@ const Login = (props) => {
         })
         console.log(payload.id)
         localStorage.setItem('user', payload.id)
-        props.setTeacher(payload)
+        props.setUser(payload)
         props.toggleAuthenticated(true)
          navigate('/posts')
     }

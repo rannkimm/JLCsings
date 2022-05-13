@@ -1,7 +1,9 @@
 import Axios from 'axios'
 
-let apiUrl = process.env.NODE_ENV === 'http://localhost:3001'
-export const BASE_URL = apiUrl
+// let apiUrl = process.env.NODE_ENV === 'http://localhost:3001'
+// export const BASE_URL = apiUrl
+export const BASE_URL = 'http://localhost:3001'
+
 
 const Client = Axios.create({ baseURL: BASE_URL })
 

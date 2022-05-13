@@ -49,7 +49,8 @@ function App() {
        <Routes>
         <Route path="/" element={ <Landing /> } />
         <Route path="/register" element={ <Register /> } />
-        <Route path="/login" element={ <Login /> } />
+        <Route path="/login" element={ <Login setUser={setUser}
+          toggleAuthenticated={toggleAuthenticated} /> } />
         <Route path="/" element={ <Home /> } />
        </Routes>
      </main>

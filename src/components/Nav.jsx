@@ -4,25 +4,25 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     let authenticatedOptions
     if(user) {
         authenticatedOptions = (
-            <div>
+            <nav>
                 <Link to="/home">Home</Link>
                 <Link to="/mymusic">My Music</Link>
                 <Link onClick={handleLogOut} to="/">Log Out</Link>
-            </div>
+            </nav>
         )
     }
     const publicOptions = (
-        <div>
+        <nav>
             <Link to="/register">Register</Link>
             <Link to="/login">Login</Link>
-        </div>
+        </nav>
     )
 
     return (
         <div>
-            <div> 
+            <nav> 
                 {authenticated && user ? authenticatedOptions : publicOptions}
-            </div>
+            </nav>
         </div>
     )
 }

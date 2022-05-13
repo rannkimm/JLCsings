@@ -29,7 +29,7 @@ export const CheckSession = async () => {
     console.log('checksesson')
     // Checks if the current token if it exists is valid
     const res = await Client.get('/auth/session')
-    
+    console.log('check', res)
     return res.data
   } catch (error) {
     throw error

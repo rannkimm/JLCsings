@@ -7,6 +7,7 @@ import Landing from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
+import MyMusic from './pages/MyMusic'
 import Nav from './components/Nav'
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
     setUser(null)
     toggleAuthenticated(false);
     localStorage.clear();
-    navigate('/home')
+    navigate('/')
   }
 
   useEffect(() => {
@@ -51,7 +52,8 @@ function App() {
         <Route path="/register" element={ <Register /> } />
         <Route path="/login" element={ <Login setUser={setUser}
           toggleAuthenticated={toggleAuthenticated} /> } />
-        <Route path="/" element={ <Home /> } />
+        <Route path="/home" element={ <Home /> } />
+        <Route path="/mymusic" element={ <MyMusic /> } />
        </Routes>
      </main>
     </div>

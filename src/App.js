@@ -9,12 +9,14 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import MyMusic from './pages/MyMusic'
 import MusicDetails from './components/MusicDetails'
+import MusicForm from './components/MusicForm'
 import Nav from './components/Nav'
 
 function App() {
 
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState('')
+  const [indUserMusic, setindUserMusic] = useState()
 
   let navigate = useNavigate()
 
@@ -58,8 +60,9 @@ function App() {
         <Route path="/login" element={ <Login setUser={setUser}
           toggleAuthenticated={toggleAuthenticated} /> } />
         <Route path="/home" element={ <Home /> } />
-        <Route path="/mymusic" element={ <MyMusic /> } />
+        <Route path="/mymusic" element={ <MyMusic indUserMusic={indUserMusic} setindUserMusic={setindUserMusic} /> } />
         <Route path="/home/musics/:id" element={ <MusicDetails /> }/>
+        <Route path="/mymusic/new" element={<MusicForm indUserMusic={indUserMusic} setindUserMusic={setindUserMusic}/>}/>
        </Routes>
      </main>
     </div>

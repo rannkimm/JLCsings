@@ -2,18 +2,18 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { GetIndUser } from "../services/UserServices"
 
-const MyMusic = () => {
+
+
+const MyMusic = ({indUserMusic, setindUserMusic}) => {
     const [thisUser, setThisUser] = useState()
-    const [userMusics, setUserMusics] = useState()
     let navigate = useNavigate()
 
 const getUserMusic = async (req, res) => {
     const data = await GetIndUser(localStorage.getItem('user'))
     setThisUser(data.indUser)
-    setUserMusics(data.getMusics)
+    setindUserMusic(data.getMusics)
 
 }
-
 
 
 useEffect(()=> {
@@ -26,13 +26,15 @@ const goToDetails = (music) => {
     navigate(`/home/musics/${music.id}`)
 }
 
-console.log(thisUser)
-console.log(userMusics)
+const createNew = () => {
+    navigate('/mymusic/new')
+}
 
-    return (userMusics && thisUser) ? (
+
+    return (indUserMusic && thisUser) ? (
         <div>
             <div>
-                {userMusics.map((music) => (
+                {indUserMusic.map((music) => (
                     <div onClick={()=> goToDetails(music)} key = {music.id}>
                         <div>{music.title}</div>
                     </div>

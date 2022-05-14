@@ -20,7 +20,7 @@ function App() {
 
   const checkToken = async () => {
     const user = await CheckSession()
-    console.log('checktoken', user)
+    // console.log('checktoken', user)
     setUser(user)
     toggleAuthenticated(true)
   }

@@ -14,7 +14,7 @@ export const GetAllMusic = async () => {
 export const GetIndMusic = async (data) => {
     try {
         const res = await Client.get(`/musics/${data}`)
-        return res
+        return res.data
     } catch (error) {
         throw error
     }

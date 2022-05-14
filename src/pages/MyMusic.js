@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import { GetIndUser } from "../services/UserServices"
 
 
@@ -31,7 +31,7 @@ const goToDetails = (music) => {
 
     return (indUserMusic && thisUser) ? (
         <div>
-            <button>Create</button>
+            <Link to={('/mymusic/new')}><button>Create</button></Link>
             <div>
                 {indUserMusic.map((music) => (
                     <div onClick={()=> goToDetails(music)} key = {music.id}>

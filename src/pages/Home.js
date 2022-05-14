@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react"
+import { useNavigate,} from "react-router-dom"
 import { GetAllMusic } from "../services/MusicServices"
 
 const Home = () => {
     const [musics, setMusics] = useState()
+    let navigate = useNavigate()
+
+
     
     useEffect(()=> {
         const getMusics = async (req, res) => {
@@ -13,14 +17,18 @@ const Home = () => {
         getMusics()
     }, [])
     
+    const showMusicDetails = (music) => {
+        navigate(`/home/musics/${music.id}`)
+    }
+
 
     return (musics) ? (
         <div>
             <div>
                 {musics.map((music) => (
-                    <ul key = {music.id}>
-                        <li>{music.title}</li>
-                    </ul>
+                    <div onClick={()=> showMusicDetails(music)} key = {music.id}>
+                        <div>{music.title}</div>
+                    </div>
                 ))}
             </div>
         </div>

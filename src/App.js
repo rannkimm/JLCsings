@@ -57,8 +57,8 @@ function App() {
         <Route path="/login" element={ <Login setUser={setUser}
           toggleAuthenticated={toggleAuthenticated} /> } />
         <Route path="/home" element={ <Home /> } />
-        <Route path="/mymusic" element={ <MyMusic /> } />
-        <Route path="/musicdetail" element={ <MusicDetails /> }/>
+        <Route path="/home/mymusic" element={ <MyMusic /> } />
+        <Route path="/home/musics/:id" element={ <MusicDetails /> }/>
        </Routes>
      </main>
     </div>

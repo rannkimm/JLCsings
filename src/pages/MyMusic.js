@@ -26,13 +26,12 @@ const goToDetails = (music) => {
     navigate(`/home/musics/${music.id}`)
 }
 
-const createNew = () => {
-    navigate('/mymusic/new')
-}
+
 
 
     return (indUserMusic && thisUser) ? (
         <div>
+            <button>Create</button>
             <div>
                 {indUserMusic.map((music) => (
                     <div onClick={()=> goToDetails(music)} key = {music.id}>

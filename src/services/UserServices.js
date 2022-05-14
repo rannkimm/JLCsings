@@ -20,8 +20,9 @@ export const GetIndUser = async (data) => {
 
 export const CreateMusic = async (data) => {
     try {
-        const res = await Client.post(`/users/newmusic/${data}`)
-        return res
+        let userId = data.user_id
+        const res = await Client.post(`/users/${userId}/newmusic`, data)
+        return res.data
     } catch (error) {
         throw error
     }

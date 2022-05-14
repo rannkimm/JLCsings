@@ -16,7 +16,7 @@ function App() {
 
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState('')
-  const [indUserMusic, setindUserMusic] = useState()
+  const [indUserMusic, setindUserMusic] = useState([])
 
   let navigate = useNavigate()
 

@@ -23,7 +23,13 @@ const MusicForm = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await CreateMusic(newMusic)
+        await CreateMusic({
+            user_id: id,
+            title: newMusic.title,
+            category: categories,
+            video: newMusic.video,
+            description: newMusic.description
+        })
         props.setindUserMusic([...props.indUserMusic,newMusic])
         setCategories([])
         setNewMusic('')
@@ -33,6 +39,7 @@ const MusicForm = (props) => {
 
     const optionHandleChange = (e) => {
         let options = e.target.value
+
         console.log(typeof options)
         setCategories([...categories, options])
     }

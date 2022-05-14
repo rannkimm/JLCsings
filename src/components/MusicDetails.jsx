@@ -50,7 +50,7 @@ useEffect(()=> {
 
 export default MusicDetails
 
-
+//MAKE GET ALL USERS PAGE THAT LINKS TO THE USERS' MUSIC (TITLE)
 //show detail of each usermusics
 //link to category music titles=? categoryMusics
 //link to user

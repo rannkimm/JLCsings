@@ -12,7 +12,7 @@ export const GetAllUsers = async () => {
 export const GetIndUser = async (data) => {
     try {
         const res = await Client.get(`/users/${data}`)
-        return res
+        return res.data
     } catch (error) {
         throw error
     }

@@ -33,9 +33,10 @@ function App() {
     navigate('/')
   }
 
+
   useEffect(() => {
     const token = localStorage.getItem('token')
-    // const user = localStorage.getItem('user')
+
 
 
     if (token) {
@@ -57,7 +58,7 @@ function App() {
         <Route path="/login" element={ <Login setUser={setUser}
           toggleAuthenticated={toggleAuthenticated} /> } />
         <Route path="/home" element={ <Home /> } />
-        <Route path="/home/mymusic" element={ <MyMusic /> } />
+        <Route path="/mymusic" element={ <MyMusic /> } />
         <Route path="/home/musics/:id" element={ <MusicDetails /> }/>
        </Routes>
      </main>

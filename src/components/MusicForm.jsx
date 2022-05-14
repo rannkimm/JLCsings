@@ -13,7 +13,7 @@ const MusicForm = (props) => {
     const [categories, setCategories] = useState([])
 
     let id = parseInt(localStorage.getItem('user'))
-    console.log(id)
+
 
     let navigate = useNavigate()
 
@@ -39,9 +39,14 @@ const MusicForm = (props) => {
 
     const optionHandleChange = (e) => {
         let options = e.target.value
+        console.log(e)
+        if(categories.includes(options)) {
 
-        console.log(typeof options)
-        setCategories([...categories, options])
+            setCategories(categories.filter((item) => item !== options))
+        } else {
+            setCategories([...categories, options])
+        }
+        
     }
 
     console.log(categories)

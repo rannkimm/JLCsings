@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import MyMusic from './pages/MyMusic'
+import MusicDetails from './components/MusicDetails'
 import Nav from './components/Nav'
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           toggleAuthenticated={toggleAuthenticated} /> } />
         <Route path="/home" element={ <Home /> } />
         <Route path="/mymusic" element={ <MyMusic /> } />
+        <Route path="/musicdetail" element={ <MusicDetails /> }/>
        </Routes>
      </main>
     </div>

@@ -4,7 +4,7 @@ import Client from "./api";
 export const GetAllMusic = async () => {
     try {
         const res = await Client.get('/musics')
-        return res
+        return res.data
     } catch (error) {
         throw error
     }

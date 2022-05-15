@@ -1,24 +1,29 @@
 import { useState, useEffect } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams, Link } from "react-router-dom"
 import { GetIndMusic } from "../services/MusicServices"
 
 const MusicDetails = () => {
 const [music, setMusic] = useState()
-// const [video, setVideo] = useState()
+const [show, setShow] = useState()
 
 let {id} = useParams()
-
+let userId = localStorage.getItem('user')
+// const renderButtons = () => {
+//     if (userId === music.user_id) {
+//         <Link
+//     }
+// }
 
 useEffect(()=> {
     const getMusic = async (req, res) => {
         const data = await GetIndMusic(id)
-        console.log(data)
+
         setMusic(data)
         
     }
     getMusic()
 }, [])
-
+console.log(music)
 
     return (music) ? (
         <div>

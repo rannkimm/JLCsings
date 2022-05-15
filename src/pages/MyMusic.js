@@ -40,6 +40,7 @@ const goToDetails = (music) => {
                 ))}
             </div>
         </div>
+
     ) : (
         <div></div>
     )

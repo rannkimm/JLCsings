@@ -93,7 +93,7 @@ console.log(music)
             </div>
             <div>
                 { (userId === music.user_id) ? <button onClick={editButton}>Edit</button> : null }
-                { (userId === music.user_id) ? <button>Delete</button> : null }
+                { (userId === music.user_id) ? <button onClick={deleteButton}>Delete</button> : null }
             </div>
             { (show) ? 
             <div>

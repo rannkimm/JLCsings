@@ -57,7 +57,7 @@ export const GetAllMusicsheetByKey = async (data) => {
 export const CreatMusicsheet = async (data) => {
     try {
         const res = await Client.post(`/musics/all/sheets/new/${data}`)
-        return res
+        return res.data
     } catch (error) {
         throw error
     }
@@ -66,8 +66,9 @@ export const CreatMusicsheet = async (data) => {
 //call on update music component
 export const UpdateMusic = async (data) => {
     try {
-        const res = await Client.put(`/musics/${data}`)
-        return res
+        const musicId = data.id
+        const res = await Client.put(`/musics/${musicId}`, data)
+        return res.data
     } catch (error) {
         throw error
     }

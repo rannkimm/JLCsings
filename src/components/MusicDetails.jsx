@@ -1,18 +1,25 @@
 import { render } from "@testing-library/react"
 import { useState, useEffect } from "react"
-import { useNavigate, useParams, Link } from "react-router-dom"
-import { GetIndMusic, UpdateMusic } from "../services/MusicServices"
+import { useNavigate, useParams} from "react-router-dom"
+import { GetIndMusic, UpdateMusic, DeleteMusic } from "../services/MusicServices"
 
 const MusicDetails = () => {
 const [music, setMusic] = useState()
 const [show, setShow] = useState(false)
-const [categories, setCategories] = useState('')
+const [categories, setCategories] = useState([])
 
 let {id} = useParams()
 let userId = parseInt(localStorage.getItem('user'))
+let navigate = useNavigate()
+
 
 const editButton = () => {
     setShow(true)
+}
+
+const deleteButton = async () => {
+    await DeleteMusic(id)
+    navigate('/mymusic')
 }
 
 const optionHandleChange = (e) => {
@@ -24,7 +31,6 @@ const optionHandleChange = (e) => {
     } else {
         setCategories([...categories, options])
     }
-    
 }
 
 const handleChange = (e) => {
@@ -32,7 +38,7 @@ const handleChange = (e) => {
 }
 
 const handleSubmit = async (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     await UpdateMusic({
         id: id,
         user_id: userId,
@@ -42,9 +48,7 @@ const handleSubmit = async (e) => {
         description: music.description
     })
 
-    setMusic({...music, category: categories})
-    console.log(music)
-
+    setMusic(music)
     setCategories('')
     setShow(false)
 
@@ -89,6 +93,7 @@ console.log(music)
             </div>
             <div>
                 { (userId === music.user_id) ? <button onClick={editButton}>Edit</button> : null }
+                { (userId === music.user_id) ? <button>Delete</button> : null }
             </div>
             { (show) ? 
             <div>

@@ -7,9 +7,10 @@ import { GetIndUser } from "../services/UserServices"
 const MyMusic = ({indUserMusic, setindUserMusic}) => {
     const [thisUser, setThisUser] = useState()
     let navigate = useNavigate()
+    let userId = parseInt(localStorage.getItem('user'))
 
 const getUserMusic = async (req, res) => {
-    const data = await GetIndUser(localStorage.getItem('user'))
+    const data = await GetIndUser(userId)
     setThisUser(data.indUser)
     setindUserMusic(data.getMusics)
 

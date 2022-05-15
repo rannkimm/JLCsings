@@ -80,7 +80,7 @@ const MusicForm = (props) => {
                     </div>
                 </div>
                 <input value={newMusic.video} onChange={handleChange} name={'video'} placeholder={'video'} />
-                <input value={newMusic.description} onChange={handleChange} name={'description'} placeholder={'description'} />
+                <textarea value={newMusic.description} onChange={handleChange} name={'description'} placeholder={'description'} />
                 <button>Submit</button>
             </form>
         </div>

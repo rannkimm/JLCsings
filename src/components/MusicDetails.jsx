@@ -31,6 +31,7 @@ const optionHandleChange = (e) => {
     } else {
         setCategories([...categories, options])
     }
+    console.log('handle', categories)
 }
 
 const handleChange = (e) => {
@@ -39,21 +40,33 @@ const handleChange = (e) => {
 
 const handleSubmit = async (e) => {
     // e.preventDefault()
-    await UpdateMusic({
-        id: id,
-        user_id: userId,
-        title: music.title,
-        video: music.video,
-        category: categories,
-        description: music.description
-    })
-
+    if(Object.keys(categories).length === 0) {
+        await UpdateMusic({
+            id: id,
+            user_id: userId,
+            title: music.title,
+            video: music.video,
+            category: music.category,
+            description: music.description
+        })
+    } else if(Object.keys(categories).length !== 0) {
+        await UpdateMusic({
+            id: id,
+            user_id: userId,
+            title: music.title,
+            video: music.video,
+            category: categories,
+            description: music.description
+        })
+    }
     setMusic(music)
-    setCategories('')
+    setCategories([])
     setShow(false)
 
 }
 
+
+console.log(typeof Object.keys(categories).length)
 useEffect(()=> {
     const getMusic = async (req, res) => {
         const data = await GetIndMusic(id)
@@ -124,7 +137,7 @@ console.log(music)
                         </div>
                     </div>
                     <input value={music.video}  name={'video'} placeholder={'video'} onChange={handleChange}/>
-                    <input value={music.description}  name={'description'} placeholder={'description'} onChange={handleChange}/>
+                    <textarea value={music.description}  name={'description'} placeholder={'description'} onChange={handleChange}/>
                     <button>Submit</button>
                 </form>
             </div>

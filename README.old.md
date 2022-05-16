@@ -2,6 +2,7 @@
 ## By: Ran Kim
 ## Date: 5/5/22
 ****
+[landing](./src/images/readme.png)
 ### Description:
 #### Band Masters of many Korean churches struggle to find music in songs that are in the correct singing range for their singers. If they are not able to transpose the music themselves then they are left a very limited list of songs to pick from. Additionally, many praise bands reharmonize praise songs but never share their music with others.
 

@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-let apiUrl = process.env.NODE_ENV === 'production' ? `https://jlcsings-backend.herokuapp.com/` : 'http://localhost:3001/'
+let BASE_URL = process.env.NODE_ENV === 'production' ? `https://jlcsings-backend.herokuapp.com/` : 'http://localhost:3001/'
 {/* export const BASE_URL = 'http://localhost:3001' */}
 
 

@@ -4,9 +4,9 @@ const Landing = () => {
 
     return (
         <div>
-            <div>
-                <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link>
+            <div className="landingh1">
+                <h1>JLCsings</h1>
+                <img src="../images/Music-notes.jpeg"/>
             </div>
         </div>
     )

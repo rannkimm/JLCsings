@@ -27,7 +27,6 @@ const Login = (props) => {
     }
     return (
         <div>
-            <Nav />
             <div> 
             <h1>Sign In</h1>
                 <form onSubmit={handleSubmit}>

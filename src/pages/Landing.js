@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import musicnotes from '../images/musicnotes.png'
 const Landing = () => {
 
 
@@ -6,8 +6,9 @@ const Landing = () => {
         <div>
             <div className="landingh1">
                 <h1>JLCsings</h1>
-                <img src="../images/Music-notes.jpeg"/>
+                
             </div>
+            <img className="landingimg" src={musicnotes}/>
         </div>
     )
 }

@@ -16,46 +16,11 @@ const Register = () => {
         confirmPassword: ''
     })
 
-    // const [usernameList, setUsernameList] = useState()
-    // const [emailList, setEmailList] = useState()
-    // const [usedInfo, setUsedInfo] = useState(true)
-
-    // useEffect(()=> {
-    //     const getUserInfo = async () => {
-    //         let usernameArr = []
-    //         let emailArr = []
-
-
-    //         let result = await Client.get(`user_info`)
-    //         console.log(result)
-    //         // .map((name)=>{
-    //         //     usernameArr.push(name.username)
-    //         // })
-    //         result.data.tEmails.map((email)=>{
-    //             emailArr.push(email.email)
-    //         })
-    //         let alphaUsernameArr = usernameArr.sort((a, b) => a.localeCompare(b))
-    //         let alphaEmailArr = emailArr.sort((a, b) => a.localeCompare(b))
-    //         setUsernameList(alphaUsernameArr)
-    //         setEmailList(alphaEmailArr)
-
-    //     }
-    //     getUserInfo()
-
-    // }, [])
-    // const redAlert = () => {
-    //     setUsedInfo(!usedInfo)
-    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         
-        // let formName = !usernameList.includes(formValues.username)
-        // let formEmail = !emailList.includes(formValues.email)
-
-            
-        
-        // if(formName && formEmail){
+      
             await RegisterUser({
                 firstName: formValues.firstName,
                 lastName: formValues.lastName,
@@ -71,7 +36,7 @@ const Register = () => {
                   password: '',
                   confirmPassword: ''})
               navigate('/login')
-        // }
+
         setFormValues({
             firstName: formValues.firstName,
             lastName: formValues.lastName,
@@ -80,9 +45,7 @@ const Register = () => {
             password: '',
             confirmPassword: ''
         })
-        // console.log('Used info')
-        // setTimeout(redAlert, 3000)
-
+   
         
     }
 
@@ -90,12 +53,9 @@ const Register = () => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
     }
     console.log(formValues)
-    // console.log(emailList)
-    // console.log(usernameList)
 
     return (
         <div>
-            <Nav />
             <div >
             <h1>Register</h1>
                 <form onSubmit={handleSubmit}>

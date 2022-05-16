@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
-import Nav from '../components/Nav'
+
 // import Client from '../services/api'
 
 const Register = () => {
@@ -56,13 +56,13 @@ const Register = () => {
 
     return (
         <div>
-            <div >
+            <div className='regDiv'>
             <h1>Register</h1>
-                <form onSubmit={handleSubmit}>
+                <form className='regForm' onSubmit={handleSubmit}>
                     <div >
                         <label htmlFor="name">First Name</label>
                         <br></br>
-                        <input 
+                        <input  className="input1"
                         onChange={handleChange}
                         name="firstName"
                         type="text"
@@ -74,7 +74,7 @@ const Register = () => {
                     <div >
                         <label htmlFor="name">Last Name</label>
                         <br></br>
-                        <input 
+                        <input className="input1"
                         onChange={handleChange}
                         name="lastName"
                         type="text"
@@ -86,7 +86,7 @@ const Register = () => {
                     <div >
                         <label htmlFor="username">Username</label>
                         <br></br>
-                        <input 
+                        <input className="input1"
                         onChange={handleChange}
                         name="username"
                         type="text"
@@ -98,7 +98,7 @@ const Register = () => {
                     <div >
                         <label htmlFor="email">Email</label>
                         <br></br>
-                        <input 
+                        <input className="input1"
                         onChange={handleChange}
                         name="email"
                         type="email"
@@ -110,7 +110,7 @@ const Register = () => {
                     <div >
                         <label htmlFor="password">Password</label>
                         <br></br>
-                        <input 
+                        <input className="input1"
                         onChange={handleChange}
                         type="password"
                         name="password"
@@ -132,6 +132,7 @@ const Register = () => {
                         />
                     </div>
                     <button 
+                        className='regButton'
                         disabled={
                         !formValues.email ||
                         (!formValues.password &&

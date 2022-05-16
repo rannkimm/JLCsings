@@ -18,7 +18,7 @@
 
 nav {
     right: 2%;
-    position: absolute;
+    /* position: absolute; */
     height: 50px;
     z-index: 2;
 }
@@ -28,9 +28,138 @@ nav {
     font-size: 25pt;
     color: black;
     text-decoration: none;
-    margin: 9pt;;
+    margin: 9pt;
 }
 
 .link:hover {
     font-size: 30pt;
+}
+
+.regDiv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15pt;
+    border-radius: 10px;
+}
+
+.regForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    margin: auto;
+}
+
+.input1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15pt;
+    border-radius: 10px;
+}
+
+.regButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15pt;
+    border-radius: 10px;
+}
+
+.regButton:hover {
+    width: 310px;
+    height: 45px;
+}
+
+.titlecontainer {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .musiccreate-button {
+    align-items: center;
+} */
+
+.musictitle {
+    text-align: center;
+    font-size: 26pt;
+    margin-top: 18px;
+}
+
+.detailsContainer {
+    text-align: center;
+}
+
+.sheetContainer {
+    text-align: center;
+}
+
+.addmusic {
+    text-align: center;
+}
+
+.musicform-con {
+    align-items: center;
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    grid-template-areas: 
+        "."
+        "."
+        "."
+        ".";
+    height: 500px;
+    
+}
+
+.music-title {
+    justify-self: center;
+    text-align: center;
+    height: 20px;
+    width: 500px;
+}
+
+.music-cat {
+    justify-self: center;
+    text-align: center;
+}
+
+.music-video {
+    justify-self: center;
+    text-align: center;
+    height: 20px;
+    width: 500px;
+}
+
+.music-des {
+    justify-self: center;
+    text-align: center;
+    height: 200px;
+    width: 500px;
+}
+
+.addmusic-button {
+    margin-top: 10px;
+    justify-self: center;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+}
+
+.addmusic-button:hover {
+    box-shadow: 0 0 3px;
 }

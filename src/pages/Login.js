@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SignInUser } from '../services/Auth'
-import Nav from '../components/Nav'
+
 
 const Login = (props) => {
     let navigate = useNavigate()
@@ -27,13 +27,12 @@ const Login = (props) => {
     }
     return (
         <div>
-            <div> 
+            <div className='regDiv' > 
             <h1>Sign In</h1>
-                <form onSubmit={handleSubmit}>
-                    <div > Please Log in</div>
+                <form className='regForm' onSubmit={handleSubmit}>
                     <div >
                         <label htmlFor='email'>Username</label>
-                         <input
+                         <input className='input1'
                             onChange={handleChange}
                             name="username"
                             type="text"
@@ -42,7 +41,7 @@ const Login = (props) => {
                             required
                         />
                         <label htmlFor="password">Password</label>
-                        <input
+                        <input className='input1'
                         onChange={handleChange}
                         type="password"
                         name="password"
@@ -50,7 +49,7 @@ const Login = (props) => {
                         required
                         />
                     </div>
-                    <button disabled={!formValues.username || !formValues.password}>Log In</button>
+                    <button className='redButton' disabled={!formValues.username || !formValues.password}>Log In</button>
                 </form> 
             </div>
         </div>

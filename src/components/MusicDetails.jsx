@@ -38,7 +38,6 @@ const handleChange = (e) => {
 }
 
 const handleSubmit = async (e) => {
-    // e.preventDefault()
     if(Object.keys(categories).length === 0) {
         await UpdateMusic({
             id: id,
@@ -78,12 +77,12 @@ useEffect(()=> {
     }
     getMusic()
 }, [])
-console.log(music)
-// console.log(userId, music.user_id)
+// console.log(music)
+
 
     return (music) ? (
         <div>
-            <div>
+            <div className="detailsContainer">
                 <h1>{music.title}</h1>
                 <div>
                     <iframe 

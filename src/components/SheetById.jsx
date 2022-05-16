@@ -18,7 +18,7 @@ useEffect(() => {
 console.log(sheet)
 
     return (sheet) ? (
-        <div>
+        <div className="sheetContainer">
             <h1>{sheet.title}</h1>
             <h5>Key: {sheet.key}</h5>
             <img src={sheet.image} alt="sheet"/>

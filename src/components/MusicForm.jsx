@@ -51,13 +51,13 @@ const MusicForm = (props) => {
     console.log(categories)
 
     return (
-        <div>
-            <h2>Add New Music</h2>
-            <form onSubmit={handleSubmit}>
-                <input value={newMusic.title} onChange={handleChange} name={'title'} placeholder={'title'} />
-                <div>
+        <div >
+            <h2 className="addmusic">Add New Music</h2>
+            <form className="musicform-con" onSubmit={handleSubmit}>
+                <input className="music-title" value={newMusic.title} onChange={handleChange} name={'title'} placeholder={'title'} />
+                <div className="music-cat">
                     <label>Category:</label>
-                    <div>
+                    <div >
                         <input type='checkbox' name='category' value='느린송' id='느린송' onChange={optionHandleChange}/>
                         <label htmlFor='느린송'>느린송</label>
                     </div>
@@ -78,9 +78,9 @@ const MusicForm = (props) => {
                         <label htmlFor='기도송'>기도송</label>
                     </div>
                 </div>
-                <input value={newMusic.video} onChange={handleChange} name={'video'} placeholder={'video'} />
-                <textarea value={newMusic.description} onChange={handleChange} name={'description'} placeholder={'description'} />
-                <button>Submit</button>
+                <input className="music-video" value={newMusic.video} onChange={handleChange} name={'video'} placeholder={'video embedded url'} />
+                <textarea className="music-des" value={newMusic.description} onChange={handleChange} name={'description'} placeholder={'description'} />
+                <button className="addmusic-button" >Submit</button>
             </form>
         </div>
     )

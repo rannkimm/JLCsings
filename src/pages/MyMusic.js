@@ -31,12 +31,12 @@ const goToDetails = (music) => {
 
 
     return (indUserMusic && thisUser) ? (
-        <div>
-            <Link to={('/mymusic/new')}><button>Create</button></Link>
-            <div>
+        <div className="titlecontainer">
+            <Link to={('/mymusic/new')}><button className="musiccreate-button">Create</button></Link>
+            <div >
                 {indUserMusic.map((music) => (
                     <div onClick={()=> goToDetails(music)} key = {music.id}>
-                        <div>{music.title}</div>
+                        <div className="musictitle">{music.title}</div>
                     </div>
                 ))}
             </div>

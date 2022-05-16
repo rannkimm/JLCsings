@@ -24,10 +24,10 @@ const Home = () => {
 
     return (musics) ? (
         <div>
-            <div>
+            <div className="titlecontainer">
                 {musics.map((music) => (
                     <div onClick={()=> showMusicDetails(music)} key = {music.id}>
-                        <div>{music.title}</div>
+                        <div className="musictitle">{music.title}</div>
                     </div>
                 ))}
             </div>

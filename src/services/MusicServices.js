@@ -20,6 +20,7 @@ export const GetIndMusic = async (data) => {
     }
 }
 
+
 //gets all music sheets...
 export const GetAllMusicsheet = async () => {
     try {
@@ -37,7 +38,7 @@ export const GetAllMusicsheet = async () => {
 export const GetIndMusicsheet = async (data) => {
     try {
         const res = await Client.get(`/musics/all/sheets/${data}`)
-        return res
+        return res.data
     } catch (error) {
         throw error
     }

@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import MyMusic from './pages/MyMusic'
 import MusicDetails from './components/MusicDetails'
 import MusicForm from './components/MusicForm'
+import SheetById from './components/SheetById'
 
 import Nav from './components/Nav'
 
@@ -62,6 +63,7 @@ function App() {
           toggleAuthenticated={toggleAuthenticated} /> } />
         <Route path="/home" element={ <Home /> } />
         <Route path="/home/musics/:id" element={ <MusicDetails /> }/>
+        <Route path='/home/musics/sheet/:id' element={ <SheetById />}/>
         <Route path="/mymusic" element={ <MyMusic indUserMusic={indUserMusic} setindUserMusic={setindUserMusic} /> } />
         <Route path="/mymusic/new" element={<MusicForm indUserMusic={indUserMusic} setindUserMusic={setindUserMusic}/>}/>
        </Routes>

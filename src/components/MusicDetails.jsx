@@ -65,8 +65,11 @@ const handleSubmit = async (e) => {
 
 }
 
+const showSheetById = (sheet) => {
+        
+        navigate(`/home/musics/sheet/${sheet.id}`)
 
-console.log(typeof Object.keys(categories).length)
+}
 useEffect(()=> {
     const getMusic = async (req, res) => {
         const data = await GetIndMusic(id)
@@ -101,6 +104,13 @@ console.log(music)
                     ))}
                 </div>
                 <h3>{music.description}</h3>
+                <div>
+                {music.thisMusic.map((sheet) => (
+                    <div onClick={()=> showSheetById(sheet)}  key = {sheet.id}>
+                        <div>{sheet.title}</div>
+                    </div>
+                ))}
+                </div>
                 <h6>{music.user.username}</h6>
             
             </div>

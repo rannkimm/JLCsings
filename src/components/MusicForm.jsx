@@ -1,4 +1,3 @@
-import { getMouseEventOptions } from "@testing-library/user-event/dist/utils"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { CreateMusic } from "../services/UserServices"

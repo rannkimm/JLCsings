@@ -21,7 +21,7 @@ console.log(sheet)
         <div>
             <h1>{sheet.title}</h1>
             <h5>Key: {sheet.key}</h5>
-            <img src={sheet.image}/>
+            <img src={sheet.image} alt="sheet"/>
         </div>
     ) : (
         <div></div>
